@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Main Page&nbsp;-INFR-3120 LABS</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+			   function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="content/labs.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="content/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- gallery -->
+	<link type="text/css" rel="stylesheet" href="content/cm-overlay.css" />
+	<!-- //gallery -->
+	<!-- font-awesome icons -->
+	<link href="content/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<link href="https://fonts.googleapis.com/css?family=Gidugu" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cm-overlay.js"></script>
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="dist/jquery.validate.js"></script>
+	<script type="text/javascript" src="lib/jquery.form.js"></script>
+	<script type="text/javascript" src="lib/jquery.mask.js"></script>
+	<script type="text/javascript" src="js/bars.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/myJS.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+
+</head>
+<body>
+	<form id="validationForm" action="http://localhost:8080/update/" method="post" enctype="multipart/form-data">
+		<div id="body">
+			<!-- header -->
+			<div class="w3_navigation">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<div class="logo">
+								<h1><a class="navbar-brand" href="default.aspx"><span class="one">INFR 3120</span>-LABS</a></h1>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="" id="bs-example-navbar-collapse-1">
+							<nav class="cl-effect-1" id="cl-effect-1">
+								<ul class="nav navbar-nav">
+									<li class="active"><a class="scroll" href="index.html">Home</a></li>
+									<li><a href="#about-me" class="scroll hvr-bounce-to-bottom">About Me</a></li>
+									<li><a href="#Programming" class="scroll hvr-bounce-to-bottom">Programming</a></li>
+									<li><a href="#Professional" class="scroll hvr-bounce-to-bottom">Professional</a></li>
+									<li><a href="#Schedules" class="scroll hvr-bounce-to-bottom">Schedules</a></li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+			<!-- //header -->
+			<!-- //here ends scrolling icon -->
+			<div class="main" id="home">
+				<!-- banner -->
+				<div class="banner">
+					<h2>Admin Page</h2>
+				</div>
+				<!-- //banner -->
+			</div>
+			<!-- header -->
+			<!-- //header -->
+			<!-- about -->
+			<script>
+				<!-- $.validator.setDefaults({ -->
+					<!-- submitHandler: function () { -->
+						<!-- alert("submitted!"); -->
+					<!-- } -->
+				<!-- }); -->
+
+				$().ready(function () {
+					$('#phoneNumber').mask('(000) 000-0000');
+					// validate the comment form when it is submitted
+					$("#commentForm").validate();
+					// validate signup form on keyup and submit
+					$("#validationForm").validate({
+						rules: {
+							userName: {
+								required: true,
+								minlength: 4,
+								maxlength: 30
+							},
+							email: {
+								required: true,
+								email: true
+							},
+							phoneNumber: {
+								required: true,
+								minlength: 10
+							}
+						},
+
+						messages: {
+							UserName: "Please enter a valid user name.",
+							//year: {
+							//	required: "Please provide a year.",
+							//	minlength: "This is the 21 century."
+							//},
+							email: "Please enter a valid email address",
+							phoneNumber: "Please enter a valid phone number",
+						}
+					});
+				});
+			</script>
+			<div class="about" id="about">
+				<div class="container">
+					<div class="container img-rounded gap-ub">
+						<div class="row">
+							<div class="col-lg-2"></div>
+							<div class="col-lg-8">
+								<br />
+								<div class="form-group">
+									<label for="userName">User Name</label>
+									<input class="form-control" type="text" id="userName" name="userName" placeholder="Plese type your user name">
+								</div>
+								<div class="form-group">
+									<label for="phoneNumber">Phone Number:</label>
+									<br>
+									<input class="form-control" type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+								</div>
+								<div class="form-group">
+									<label for="email">Email Address:</label>
+									<br>
+									<input class="form-control" type="text" id="email" name="email" placeholder="Email Address">
+								</div>
+								<div class="form-group">
+									<label for="addrsss">About Me:</label>
+									<br>
+									<input class="form-control" type="text" id="aboutMe" name="aboutMe" placeholder="About Me">
+								</div>
+								<div class="form-group">
+									<label for="addrsss">Image Upload:</label>
+									<br>
+									<input class="form-control" type="file" id="imageUpload" name="file" placeholder="Image Upload" accept="image/*"
+								</div>
+								<input class="btn btn-primary form-control" type="submit" value="Update">
+							</div>
+							<div class="col-lg-2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<footer>
+			<div class="w3l_footer">
+				<div class="container">
+
+					<div class="w3ls_footer_grids">
+
+						<div class="w3ls_footer_grid">
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									<h4>Location</h4>
+									<p>2000 Simcoe St N, Oshawa, ON L1H 7K4</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									W	<h4>Email</h4>
+									<p>shengqian.wang@uoit.net</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									<h4>Call Me</h4>
+									<p>+1 289-688-4608</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3l_footer_pos">
+					<p>© 2018 Tony Wang. All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+	</form>
+</body>
+</html>A

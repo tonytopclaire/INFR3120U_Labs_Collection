@@ -1,0 +1,64 @@
+﻿
+a {
+	color: Highlight;
+}
+
+	a:visited {
+		color: red;
+	}
+
+#course td, #course th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tr:hover {
+	background-color: lightgray
+}
+
+#a-contacts h2, p {
+	color: black;
+}
+
+/*CSS For Lab 3------------------------------------------ */
+
+#Programming {
+	width: 40%;
+	float: left;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#Professional {
+	width: 30%;
+	float: left;
+}
+
+#about-me {
+	width: 30%;
+	float: left;
+}
+
+#upload {
+	min-height:50px;
+}
+#UserIntro {
+	min-height:300px;
+}
+@media only screen and (max-width: 600px) {
+	#about-me, #Professional, #Programming {
+		clear: left;
+		width: 100%;
+		padding: inherit;
+	}
+}
+.navbar-nav {
+	float: none;
+	margin: 0;
+	text-align: center;
+	/*background: #0c0c0c;*/
+}
+
+	.navbar-nav > li:nth-child(3) a {
+		margin-right: auto;
+	}

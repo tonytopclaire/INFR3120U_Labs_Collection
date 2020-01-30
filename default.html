@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="lab6" ng-controller="myCtrl">
+<head>
+	<title>{{devName}}&nbsp;-INFR-3120 LABS</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+			   function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="content/labs.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="content/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- gallery -->
+	<link type="text/css" rel="stylesheet" href="content/cm-overlay.css" />
+	<!-- //gallery -->
+	<!-- font-awesome icons -->
+	<link href="content/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<link href="https://fonts.googleapis.com/css?family=Gidugu" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cm-overlay.js"></script>
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/jquery.mockjax.js"></script>
+	<script type="text/javascript" src="dist/jquery.validate.js"></script>
+	<script type="text/javascript" src="lib/jquery.form.js"></script>
+	<script type="text/javascript" src="lib/jquery.mask.js"></script>
+	<script type="text/javascript" src="js/bars.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script type="text/javascript" src="js/myJS.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+            /*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+		});
+	</script>
+
+</head>
+<body>
+	<form runat="server" id="validationForm" method="post" action="http://localhost:8080/update/">
+		<div id="body">
+
+			<!-- //here ends scrolling icon -->
+			<div class="main" id="home">
+				<!-- banner -->
+				<div class="banner">
+					<h2>Tony's Laboratory</h2>
+				</div>
+				<!-- //banner -->
+			</div>
+			<!-- header -->
+			<div class="w3_navigation">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<div class="logo">
+								<h1><a class="navbar-brand" href="default.aspx"><span class="one">INFR 3120</span>-LABS</a></h1>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="" id="bs-example-navbar-collapse-1">
+							<nav class="cl-effect-1" id="cl-effect-1">
+								<ul class="nav navbar-nav">
+									<li class="active"><a class="scroll" href="index.html">Home</a></li>
+									<li><a href="#about-me" class="scroll hvr-bounce-to-bottom">About Me</a></li>
+									<li><a href="#Programming" class="scroll hvr-bounce-to-bottom">Programming</a></li>
+									<li><a href="#Professional" class="scroll hvr-bounce-to-bottom">Professional</a></li>
+									<li><a href="#Schedules" class="scroll hvr-bounce-to-bottom">Schedules</a></li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+			<!-- //header -->
+			<!-- about -->
+			<div class="about" id="about">
+				<div class="container">
+					<div class="banner">
+						<!--Slider-->
+						<div style="width: 100%;">
+							<div style="width: 50%; float: left;">
+								<img src="{{imageAddress}}" alt=" " style="width: 50%;">
+							</div>
+							<div style="width: 50%; float: left; text-align: left;" id="a-contacts">
+								<h2>Contacts</h2>
+								<!-- <p data-ng-bind="devName"></p> -->
+								<p>{{devName}}</p>
+								<p>{{faculty}}</p>
+								<p><a {{university.url}} target="_blank">{{university.name}}</a></p>
+								<p data-ng-bind="education"></p>
+								<p>{{contacts.email}}</p>
+								<p>{{contacts.phone}}</p>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<br />
+					<div>
+						<div class="w3ls-agile-left">
+							<div id="about-me">
+								<div style="width: 100%">
+									<h2>About Me</h2>
+									<br />
+								</div>
+								<div style="width: 100%">
+									<p data-ng-bind="about"></p>
+								</div>
+							</div>
+							<div id="Programming">
+								<div style="width: 100%">
+									<h2>Programmeing Skills</h2>
+									<br />
+								</div>
+								<div style="width: 100%;">
+									<ol data-ng-repeat="x in prog_skills">
+										{{x}}
+									</ol>
+								</div>
+							</div>
+							<div style="" id="Professional">
+								<div style="width: 100%">
+									<h2>Technical and Professional Skills</h2>
+									<br />
+								</div>
+								<div style="width: 100%; margin-left: 2%">
+									<ol style="list-style-type: upper-roman;" data-ng-repeat="x in skills">
+										<b>{{ x.name }}</b>
+										<br />
+										{{ x.text }}
+									</ol>
+								</div>
+							</div>
+							<div class="clearfix"></div>
+							<br />
+							<div style="width: 100%; margin-bottom: 30%;" id="Schedules">
+								<h2>Course Schedules</h2>
+								<br />
+								<table style="width: 100%" class="white-space-pre-line" id="course">
+									<thead>
+										<tr>
+											<th data-ng-click="sortType = 'CourseName'; sortReverse = !sortReverse">Course Name</th>
+											<th data-ng-click="sortType = 'CourseNumber'; sortReverse = !sortReverse">Course Number</th>
+											<th data-ng-click="sortType = 'DaysAndTime'; sortReverse = !sortReverse">Days & Time</th>
+											<th data-ng-click="sortType = 'Instructor'; sortReverse = !sortReverse">Instructor</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr data-ng-repeat="x in courses | orderBy:sortType:sortReverse | filter:searchFish">
+											<td>{{ x.CourseName }}</td>
+											<td>{{ x.CourseNumber }}</td>
+											<td>{{ x.DaysAndTime }}</td>
+											<td>{{ x.Instructor }}</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="w3l_footer">
+				<div class="container">
+
+					<div class="w3ls_footer_grids">
+
+						<div class="w3ls_footer_grid">
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									<h4>Location</h4>
+									<p>2000 Simcoe St N, Oshawa, ON L1H 7K4</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									<h4>Email</h4>
+									<p>shengqian.wang@uoit.net</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="col-md-4 w3ls_footer_grid_left">
+								<div class="w3ls_footer_grid_leftl">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</div>
+								<div class="w3ls_footer_grid_leftr">
+									<h4>Call Me</h4>
+									<p>+1 289-688-4608</p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3l_footer_pos">
+					<p>© 2018 Tony Wang. All Rights Reserved</p>
+				</div>
+			</div>
+		</footer>
+	</form>
+</body>
+</html>
