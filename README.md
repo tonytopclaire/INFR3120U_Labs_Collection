@@ -1,2 +1,2 @@
 # INFR3120ULabCollection
- A collection for all labs
+This the collection of all the 12 labs of OTU INFR 3120U.
